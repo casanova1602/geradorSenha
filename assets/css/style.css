@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --secondary-color: #8588D6;
+    --primary-color: #4045B4;
+    --button: #C7C7C7;
+    --buttonHover: #6064C8;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open sans', sans-serif;
+    line-height: 1.5em;
+    color: var(--fonte);
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-um {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container-dois {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    background-color: var(--button);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+form { 
+    margin-top: 25px;
+}
+
+form label,
+form button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 20px;
+    height: 20px;
+    width: 50px;
+}
+
+#caracteres {
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+form input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+form button, .copiar {
+    border: none;
+    color: var(--button);
+    border-radius: 10px;
+    font-size: 20px;
+    height: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    border-color: var(--button);
+    transition: ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+form button {
+    background-color: var(--primary-color);
+}
+
+.copiar{
+    background-color: var(--button);
+    color: var(--primary-color);
+}
+
+form button:hover {
+    background-color: var(--buttonHover);
+    color: white
+}
+
+.copiar:hover {
+    background-color: var(--buttonHover);
+    color: white;
+}
+
+.esconder {
+    display: none;
+}
+
+#exibir-simbolos {
+    width: 100%;
+    height: 30px;
+    font-size: large;
+    text-align: center;
+    letter-spacing: 3px;
+    word-wrap: break-word;
+}
+
+.form-group-checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0
+}
+
+.form-group {
+    margin-bottom: 100px;
+}
+
+.container-um h1{
+    margin-bottom: 50px;
+    font-size: 2.0em;
+    color: var(--button);
+}
+
+.senha-gerada {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    overflow: hidden; /* Garante que nada ultrapasse a caixa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.senha {
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    letter-spacing: 2px; /* Para testar a separação dos caracteres */
+}
+
+/* Criando o gradiente nas laterais */
+.senha-gerada::before,
+.senha-gerada::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px; /* Largura do gradiente lateral */
+    height: 100%;
+    pointer-events: none; /* Evita que interfira na interação */
+    z-index: 1;
+}
+
+/* Gradiente à esquerda */
+.senha-gerada::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(248, 248, 248) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Gradiente à direita */
+.senha-gerada::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(255, 251, 251) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.barra {
+    margin-top: 80px;
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+}
+
+.barraForca{
+    position: absolute;
+    left:0;
+    height: 10px;
+}
+
+.gerar{
+    margin-top: 100px;
+}
+
+@media(max-width: 500px){
+    h1{
+        font-size: 1.5em;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .copiar{
+        margin-top: 50px;
+    }
+}
+
+
+@media(max-width: 932px){
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .gerar{
+        margin-top: 10px;
+    }
+
+    .container-dois{
+        padding: 0 20px;
+    }
+
+}

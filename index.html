@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Modelo</title>
+</head>
+
+<body>
+    <div class="flex-box">
+        <section class="container-um">
+            <h1>Gerador de Senhas</h1>
+            <div class="senha-gerada">
+                <input type="text" class="senha"><br>
+            </div>
+            <button type="submit" class="copiar">Copiar!</button>
+
+            <div class="barra">
+                <div class="barraForca"></div>
+            </div>
+            <div class="legenda"></div>
+
+        </section>
+        <section class="container-dois">
+            <form id="formulario">
+                <div class="form-group">
+                    <label>Caracteres: </label><input type="number" min=1 max=50 id="caracteres" value="12"><br>
+                </div>
+                <div class="form-group-checkbox">
+                    <label>Adicionar Números</label><input type="checkbox" name="number" id="number" checked><br>
+                </div>
+                <div class="form-group-checkbox">
+                    <label>Letras Maiúsculas</label><input type="checkbox" name="maiuscula" id="maiuscula" checked><br>
+                </div>
+                <div class="form-group-checkbox">
+                    <label>Letras Minúsculas</label><input type="checkbox" name="minuscula" id="minuscula" checked><br>
+                </div>
+                <div class="form-group-checkbox">
+                    <label>Símbolos</label><input type="checkbox" name="simbolos" id="simbolos" checked><br>
+                </div>
+                <div class="form-group-checkbox">
+                    <label>Editar Símbolos?</label><input type="checkbox" name="editar" id="editar"><br>
+                </div>
+                <input type="text" id="exibir-simbolos" class="esconder">
+                <button type="submit" class="gerar">Gerar 🔑</button>
+            </form>
+        </section>
+   
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
