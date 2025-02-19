@@ -133,7 +133,7 @@ form button:hover {
 }
 
 .form-group {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .container-um h1{
@@ -204,7 +204,7 @@ form button:hover {
 }
 
 .gerar{
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 @media(max-width: 500px){

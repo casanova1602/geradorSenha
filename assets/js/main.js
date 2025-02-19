@@ -6,9 +6,6 @@ let senhaGerada = []
 class GeradorSenha {
     constructor() {
         this.contador = document.getElementById('caracteres')
-        this.contador.addEventListener('keydown', (e) => {
-            e.preventDefault();
-        })
         this.checkSimb = document.getElementById('simbolos');
         this.barra = document.querySelector('.barra');
         this.barra.classList.add('esconder');
