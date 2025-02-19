@@ -207,6 +207,19 @@ form button:hover {
     margin-top: 50px;
 }
 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
 @media(max-width: 500px){
     h1{
         font-size: 1.5em;
@@ -217,8 +230,37 @@ form button:hover {
     .copiar{
         margin-top: 50px;
     }
-}
 
+    .senha{
+        font-size: 15px;
+    }
+
+    .senha:focus {
+        width: 100vw;
+        height: 25%;
+        font-size: 15px;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        border-radius: 10px;
+    }
+    .senha:focus ~ .overlay {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+    }
+
+    .senha-gerada:has(.senha:focus) + .copiar {
+        position: fixed;
+        z-index: 4;
+        top: 70%;
+        left : 50%;
+        transform: translate(-50%);
+    }
+}
 
 @media(max-width: 932px){
     .form-group {

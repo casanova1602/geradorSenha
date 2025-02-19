@@ -34,6 +34,10 @@ class GeradorSenha {
             }, 4000)
         })
 
+        this.copiar.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+        })
+
         this.editar.addEventListener('change', () => {
             if (this.editar.checked) {
                 this.exibir.classList.remove('esconder');
