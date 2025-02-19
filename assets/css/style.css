@@ -12,9 +12,12 @@
     outline: 0;
 }
 
-body {
+body, html {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+body{
     font-family: 'Open sans', sans-serif;
     line-height: 1.5em;
     color: var(--fonte);
@@ -24,6 +27,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    max-width: 100vw; 
+    overflow: hidden;
 }
 
 .container-um {
@@ -33,7 +38,7 @@ body {
     justify-content: center;
     width: 50%;
     background-color: var(--primary-color);
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 20px;
 }
 
@@ -44,7 +49,7 @@ body {
     width: 50%;
     background-color: var(--button);
     padding: 20px;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 form { 
