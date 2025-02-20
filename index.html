@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Modelo</title>
+    <title>Gerador de Senha</title>
 </head>
 
 <body>
     <div class="flex-box">
         <section class="container-um">
-            <h1>Gerador de Senhas</h1>
+            <h1>Gerador de Senha</h1>
             <div class="senha-gerada">
                 <input type="text" class="senha" readonly><br>
-                <div class="overlay"></div>
             </div>
+            <div class="overlay"></div>
             <button type="submit" class="copiar">Copiar!</button>
 
             <div class="barra">
@@ -41,15 +41,18 @@
                 <div class="form-group-checkbox">
                     <label>Símbolos</label><input type="checkbox" name="simbolos" id="simbolos" checked><br>
                 </div>
-                <div class="form-group-checkbox">
+                <div class="form-group-editar">
                     <label>Editar Símbolos?</label><input type="checkbox" name="editar" id="editar"><br>
                 </div>
-                <input type="text" id="exibir-simbolos" class="esconder">
+                <div class="input-editar">
+                    <input type="text" id="exibir-simbolos" class="esconder">
+                    <div class="overlay"></div>
+                </div>
                 <button type="submit" class="gerar">Gerar 🔑</button>
             </form>
         </section>
-   
-    <script src="./assets/js/main.js"></script>
+
+        <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

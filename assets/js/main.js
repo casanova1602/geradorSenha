@@ -69,8 +69,9 @@ class GeradorSenha {
                     if (this.checkSimb.checked) senhaGerada.push(this.gerarSimbolos());
                 }
             }
-            senhaGerada.sort(() => 0.5 - Math.random());
-            const senha = senhaGerada.join('').slice(0, qnt);
+            const passCutted = senhaGerada.slice(0, qnt)
+            passCutted.sort(() => 0.5 - Math.random());
+            const senha = passCutted.join('');
             senhaGerada.length = 0
             this.exibirSenha(senha);
             this.calcularScore(senha);

@@ -12,12 +12,14 @@
     outline: 0;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
-body{
+
+body {
     font-family: 'Open sans', sans-serif;
     line-height: 1.5em;
     color: var(--fonte);
@@ -27,7 +29,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 100vw; 
+    max-width: 100vw;
     overflow: hidden;
 }
 
@@ -52,7 +54,7 @@ body{
     min-height: 100dvh;
 }
 
-form { 
+form {
     margin-top: 25px;
 }
 
@@ -73,13 +75,15 @@ form input {
     width: 80px;
     border-radius: 5px;
     padding: 0.5rem;
+    border-color: var(--primary-color);
 }
 
 form input:focus {
     outline: 1px solid var(--primary-color);
 }
 
-form button, .copiar {
+form button,
+.copiar {
     border: none;
     color: var(--button);
     border-radius: 10px;
@@ -89,7 +93,6 @@ form button, .copiar {
     cursor: pointer;
     margin-top: 20px;
     border-color: var(--button);
-    transition: ease-in-out;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -97,7 +100,7 @@ form button {
     background-color: var(--primary-color);
 }
 
-.copiar{
+.copiar {
     background-color: var(--button);
     color: var(--primary-color);
 }
@@ -116,16 +119,23 @@ form button:hover {
     display: none;
 }
 
+.aparecer {
+    display: block;
+}
+
 #exibir-simbolos {
-    width: 100%;
+    width: 80%;
     height: 30px;
     font-size: large;
     text-align: center;
     letter-spacing: 3px;
-    word-wrap: break-word;
+    border-radius: 10px;
+    border-color: var(--primary-color);
+    border-style: solid;
 }
 
-.form-group-checkbox {
+.form-group-checkbox,
+.form-group-editar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -136,7 +146,7 @@ form button:hover {
     margin-bottom: 50px;
 }
 
-.container-um h1{
+.container-um h1 {
     margin-bottom: 50px;
     font-size: 2.0em;
     color: var(--button);
@@ -146,7 +156,8 @@ form button:hover {
     position: relative;
     width: 100%;
     height: 70px;
-    overflow: hidden; /* Garante que nada ultrapasse a caixa */
+    overflow: hidden;
+    /* Garante que nada ultrapasse a caixa */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +173,7 @@ form button:hover {
     padding: 10px;
     box-sizing: border-box;
     background-color: white;
-    letter-spacing: 2px; /* Para testar a separação dos caracteres */
+    letter-spacing: 2px;
 }
 
 /* Criando o gradiente nas laterais */
@@ -171,9 +182,11 @@ form button:hover {
     content: "";
     position: absolute;
     top: 0;
-    width: 50px; /* Largura do gradiente lateral */
+    width: 50px;
+    /* Largura do gradiente lateral */
     height: 100%;
-    pointer-events: none; /* Evita que interfira na interação */
+    pointer-events: none;
+    /* Evita que interfira na interação */
     z-index: 1;
 }
 
@@ -197,81 +210,131 @@ form button:hover {
     background-color: #ccc;
 }
 
-.barraForca{
+.barraForca {
     position: absolute;
-    left:0;
+    left: 0;
     height: 10px;
 }
 
-.gerar{
-    margin-top: 50px;
+.gerar {
+    margin-top: 20px;
 }
 
-.overlay{
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     visibility: hidden;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     transition: all 0.3s ease-in-out;
     z-index: 2;
 }
 
-@media(max-width: 500px){
-    h1{
-        font-size: 1.5em;
-        line-height: 30px;
+.input-editar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media(max-width: 500px) {
+
+    .container-um h1 {
+        font-size: 2.5em;
+        line-height: 60px;
         text-align: center;
+        margin-bottom: 120px;
     }
 
-    .copiar{
-        margin-top: 50px;
+    .copiar {
+        margin-top: 120px;
     }
 
-    .senha{
+    .senha {
         font-size: 15px;
     }
 
-    .senha:focus {
+    .senha:focus,
+    #exibir-simbolos:focus {
         width: 100vw;
-        height: 25%;
-        font-size: 15px;
+        font-size: 22px;
         text-align: center;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 3;
         border-radius: 10px;
     }
-    .senha:focus ~ .overlay {
+
+    .senha:focus{
+        height: 100%;
+        z-index: 3;
+    }
+
+    #exibir-simbolos:focus{
+        height: 15%;
+        z-index: 5;
+    }
+
+    /* Quando o input estiver focado, a div senha-gerada assume o mesmo tamanho */
+    .senha-gerada:focus-within {
+        width: 100vw;
+        height: 15%;
+        z-index: 4;
+        top: 50%;
+        left: 50%;
+        position: fixed;
+        transform: translate(-50%, -50%);
+    }
+
+    #exibir-simbolos:focus ~ .overlay {
+        opacity: 1;
+        visibility: visible;
+        z-index: 4;
+    }
+
+    .senha-gerada:has(.senha:focus)+.overlay {
         opacity: 1;
         visibility: visible;
         z-index: 1;
     }
 
-    .senha-gerada:has(.senha:focus) + .copiar {
+    .senha-gerada:has(.senha:focus) ~ .copiar {
         position: fixed;
-        z-index: 4;
+        display: block;
+        z-index: 3;
         top: 70%;
-        left : 50%;
+        left: 50%;
         transform: translate(-50%);
+    }
+
+    #exibir-simbolos {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .senha-gerada::before,
+    .senha-gerada::after {
+        z-index: 4;
     }
 }
 
-@media(max-width: 932px){
+@media(max-width: 932px) {
     .form-group {
         margin-bottom: 10px;
     }
 
-    .gerar{
+    .gerar {
         margin-top: 10px;
     }
 
-    .container-dois{
+    .container-dois {
         padding: 0 20px;
     }
 
