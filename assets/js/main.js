@@ -16,7 +16,7 @@ class GeradorSenha {
         this.copiar = document.querySelector('.copiar');
 
         document.addEventListener('DOMContentLoaded', () => {
-            const senha = document.querySelector('.senha-gerada'); 
+            const senha = document.querySelector('.senha'); 
             const overlay = document.querySelector('.overlay'); 
             senha.addEventListener('blur', () => {
                 alert('teste')
