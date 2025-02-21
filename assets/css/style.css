@@ -247,6 +247,18 @@ form button:hover {
     justify-content: center;
 }
 
+.senha-reset {
+    width: auto;
+    height: auto;
+    font-size: initial;
+    text-align: initial;
+    position: initial;
+    top: initial;
+    left: initial;
+    transform: initial;
+    border-radius: initial;
+}
+
 @media(max-width: 500px) {
 
     .container-um h1 {

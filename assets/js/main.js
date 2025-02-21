@@ -15,14 +15,6 @@ class GeradorSenha {
         this.exibir = document.getElementById('exibir-simbolos');
         this.copiar = document.querySelector('.copiar');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const senha = document.querySelector('.senha'); 
-            const overlay = document.querySelector('.overlay'); 
-            senha.addEventListener('blur', () => {
-                alert('teste')
-            })
-        })
-
         this.checkSimb.addEventListener('change', () => {
             if (this.checkSimb.checked) {
                 this.editar.classList.remove('esconder');

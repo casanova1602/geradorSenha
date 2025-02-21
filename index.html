@@ -13,7 +13,7 @@
         <section class="container-um">
             <h1>Gerador de Senha</h1>
             <div class="senha-gerada">
-                <input type="text" class="senha" readonly><br>
+                <input type="text" class="senha" id="senha" readonly onblur="resetarEstilo()"><br>
             </div>
             <div class="overlay"></div>
             <button type="submit" class="copiar">Copiar!</button>
@@ -53,6 +53,21 @@
         </section>
 
         <script src="./assets/js/main.js"></script>
+        <script>
+            function resetarEstilo() {
+                const input = document.getElementById('senha');
+                input.style.width = ''; // ou outro estilo que você queira resetar
+                input.style.fontSize = '';
+                input.style.textAlign = '';
+                input.style.position = '';
+                input.style.top = '';
+                input.style.left = '';
+                input.style.transform = '';
+                input.style.borderRadius = '';
+                input.style.height = '';
+                input.style.zIndex = '';
+            }
+        </script>
 </body>
 
 </html>
