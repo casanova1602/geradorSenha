@@ -228,7 +228,7 @@ form button:hover {
     margin-top: 20px;
 }
 
-/* .overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -239,7 +239,7 @@ form button:hover {
     opacity: 0;
     transition: all 0.3s ease-in-out;
     z-index: 2;
-} */
+}
 
 .input-editar {
     display: flex;
@@ -317,11 +317,11 @@ form button:hover {
         z-index: 4;
     }
 
-    /* .senha-gerada:has(.senha:focus)+.overlay {
+    .senha-gerada:has(.senha:focus)+.overlay {
         opacity: 1;
         visibility: visible;
         z-index: 1;
-    } */
+    }
 
     .senha-gerada:has(.senha:focus) ~ .copiar {
         position: fixed;
