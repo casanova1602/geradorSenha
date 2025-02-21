@@ -8,10 +8,23 @@ class GeradorSenha {
         this.contador = document.getElementById('caracteres')
         this.checkSimb = document.getElementById('simbolos');
         this.barra = document.querySelector('.barra');
+        this.legenda = document.querySelector('.legenda')
         this.barra.classList.add('esconder');
+        this.legenda.classList.add('esconder');
         this.editar = document.getElementById('editar');
         this.exibir = document.getElementById('exibir-simbolos');
         this.copiar = document.querySelector('.copiar');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const senha = document.querySelector('.senha-gerada'); 
+            const overlay = document.querySelector('.overlay'); 
+            senha.addEventListener('blur', () => {
+                overlay.style.removeProperty('visibility');
+                senha.style.setProperty('width', '100%')
+                senha.style.setProperty('display', 'block') // Se quiser que ele fique em bloco
+            })
+        })
+
         this.checkSimb.addEventListener('change', () => {
             if (this.checkSimb.checked) {
                 this.editar.classList.remove('esconder');
@@ -54,6 +67,7 @@ class GeradorSenha {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.barra.classList.remove('esconder');
+            this.legenda.classList.remove('esconder');
             const checkNumber = document.getElementById('number');
             const checkMaius = document.getElementById('maiuscula');
             const checkMinus = document.getElementById('minuscula');
@@ -88,14 +102,13 @@ class GeradorSenha {
         if (senha.length >= 25) score++;
 
         if (/[A-Z]/.test(senha) && /[a-z]/.test(senha)) score++;
-        if (/[0-9]/.test(senha)) score++;
+        if ((/[0-9]/.test(senha) && /[a-z]/.test(senha)) || (/[0-9]/.test(senha) && /[A-Z]/.test(senha))) score++;
         if (/[^0-9A-Za-z]/.test(senha)) score++;
 
         this.gerarBarra(score);
     }
 
     gerarBarra(score) {
-        const legenda = document.querySelector('.legenda')
 
         const barraForca = document.querySelector('.barraForca')
 
@@ -116,8 +129,8 @@ class GeradorSenha {
         if (forca === 4) mensagem = 'Forte';
         if (forca === 5) mensagem = 'Muito Forte';
         if (forca === 6) mensagem = 'Extremamente Forte';
-        legenda.innerHTML = mensagem;
-        legenda.style.color = cores[forca];
+        this.legenda.innerHTML = mensagem;
+        this.legenda.style.color = cores[forca];
     }
 
     gerarNumeros(min = 0, max = 9) {
