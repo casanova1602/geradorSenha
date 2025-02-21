@@ -19,9 +19,7 @@ class GeradorSenha {
             const senha = document.querySelector('.senha-gerada'); 
             const overlay = document.querySelector('.overlay'); 
             senha.addEventListener('blur', () => {
-                overlay.style.removeProperty('visibility');
-                senha.style.setProperty('width', '100%')
-                senha.style.setProperty('display', 'block') // Se quiser que ele fique em bloco
+                alert('teste')
             })
         })
 
