@@ -55,17 +55,19 @@
         <script src="./assets/js/main.js"></script>
         <script>
             function resetarEstilo() {
-                const input = document.getElementById('senha');
-                input.style.width = ''; // ou outro estilo que você queira resetar
-                input.style.fontSize = '';
-                input.style.textAlign = '';
-                input.style.position = '';
-                input.style.top = '';
-                input.style.left = '';
-                input.style.transform = '';
-                input.style.borderRadius = '';
-                input.style.height = '';
-                input.style.zIndex = '';
+                setTimeout(function () {
+                    const input = document.getElementById('senha');
+                    input.style.width = ''; 
+                    input.style.fontSize = '';
+                    input.style.textAlign = '';
+                    input.style.position = '';
+                    input.style.top = '';
+                    input.style.left = '';
+                    input.style.transform = '';
+                    input.style.borderRadius = '';
+                    input.style.height = '';
+                    input.style.zIndex = '';
+                }, 0); // Atraso de 0ms
             }
         </script>
 </body>
