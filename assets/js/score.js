@@ -3,8 +3,6 @@ export default class Score{
     constructor(){
         this.barra = document.querySelector('.barra');
         this.legenda = document.querySelector('.legenda')
-        this.barra.classList.add('esconder');
-        this.legenda.classList.add('esconder');
     }
 
      calcularScore(senha){

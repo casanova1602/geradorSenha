@@ -20,7 +20,6 @@ export default class GerarSenha {
     }
 
     get gerar() {
-
         this.elemento.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.score.barra.classList.remove('esconder');

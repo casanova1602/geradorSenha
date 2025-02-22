@@ -10,6 +10,14 @@ export default class Elementos{
         this.checkMaius = document.getElementById('maiuscula');
         this.checkMinus = document.getElementById('minuscula');
         this.qntCaracteres = document.getElementById('caracteres');
+        this.senhaGerada = document.querySelector('.senha');
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            if(this.isSafari()){
+                console.log(this.isSafari())
+                this.senhaGerada.removeAttribute('readonly')
+            }
+        })
 
         this.checkSimb.addEventListener('change', () => {
             if (this.checkSimb.checked) {
@@ -24,9 +32,9 @@ export default class Elementos{
         });
 
         this.copiar.addEventListener('click', (e) => {
-            const senhaGerada = document.querySelector('.senha');
+            
             e.preventDefault();
-            navigator.clipboard.writeText(senhaGerada.value);
+            navigator.clipboard.writeText(this.senhaGerada.value);
             this.copiar.innerHTML = 'Copiado 😀'
             setTimeout(() => {
                 this.copiar.innerHTML = 'Copiar!'
@@ -36,5 +44,9 @@ export default class Elementos{
         this.copiar.addEventListener('mousedown', (e) => {
             e.preventDefault();
         })
+    }
+
+    isSafari(){
+        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
 }
