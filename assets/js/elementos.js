@@ -14,8 +14,9 @@ export default class Elementos{
 
         document.addEventListener('DOMContentLoaded', ()=>{
             if(this.isSafari()){
-                console.log(this.isSafari())
-                this.senhaGerada.removeAttribute('readonly')
+                console.log(this.isSafari());
+                this.senhaGerada.removeAttribute('readonly');
+                this.copiar.style.marginTop = '20px';
             }
         })
 
