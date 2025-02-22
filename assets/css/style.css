@@ -311,6 +311,17 @@ form button:hover {
         transform: translate(-50%, -50%);
     }
 
+    .senha-gerada:not(:focus-within) .senha {
+        width: 100%;
+        height: 100%;
+        font-size: x-large;
+        text-align: center;
+        border: none;
+        padding: 10px;
+        box-sizing: border-box;
+        letter-spacing: 2px;
+    }
+
     #exibir-simbolos:focus ~ .overlay {
         opacity: 1;
         visibility: visible;
